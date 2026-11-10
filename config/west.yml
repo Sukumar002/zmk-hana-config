@@ -1,0 +1,30 @@
+# Rebuild candidate with the validated shared BASE view-cycle fix pinned.
+manifest:
+  # OLED uses timeout keyboard glyph and retains four stacked half-battery rows (audit fix).
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+
+    - name: sukumar
+      url-base: https://github.com/Sukumar002
+
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+
+  projects:
+    - name: zmk
+      remote: sukumar
+      revision: 88d03e9a30d0433375ded7c07c82e5a61f023fbb
+      import: app/west.yml
+
+    - name: zmk-dongle-display
+      remote: sukumar
+      revision: 1c5efa9cb188f9b3c36a18fa8db0d6faba68457f
+
+    # OLED hardware adapter: explicit 128x32 / 128x64 display devicetree overlays.
+    - name: zmk-oled-adapter
+      remote: mctechnology17
+      revision: 892c83d60b6a365c35334c06831d9c5b0f2ba9c0
+
+  self:
+    path: config
