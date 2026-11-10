@@ -1,4 +1,4 @@
-# Hana firmware package: seven standard images plus the two MCU-specific reset images.
+# Hana firmware package: six keyboard/dongle images plus two MCU-specific settings-reset images (eight artifacts total).
 ---
 include:
   # Hana halves use Seeed XIAO nRF52840.
