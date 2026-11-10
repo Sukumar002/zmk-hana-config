@@ -1,0 +1,16 @@
+/* Shared Studio unlock chord: physical positions 0 + 1 on every shield.
+ * Keep this definition centralized so all five default keymaps behave identically.
+ * The chord is deliberately active only on layer index 0 (Base).
+ */
+/ {
+    combos {
+        compatible = "zmk,combos";
+        studio_unlock_combo {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <500>;
+            layers = <0>;
+            key-positions = <0 1>;
+            bindings = <&studio_unlock>;
+        };
+    };
+};
