@@ -4,16 +4,16 @@
 #include <drivers/behavior.h>
 #include <zmk/behavior.h>
 
-/* The display module provides this for either the LVGL or raw framebuffer
- * dongle renderer. Keep it weak so non-display targets remain linkable. */
-extern void hana_base_view_cycle(void) __attribute__((weak));
+/* The optional display module provides this API. Keep it weak so non-display
+ * targets remain linkable. */
+extern void zmk_dongle_display_base_view_cycle(void) __attribute__((weak));
 
 static int on_base_view_toggle_pressed(struct zmk_behavior_binding *binding,
                                        struct zmk_behavior_binding_event event) {
     ARG_UNUSED(binding);
     ARG_UNUSED(event);
-    if (hana_base_view_cycle != NULL) {
-        hana_base_view_cycle();
+    if (zmk_dongle_display_base_view_cycle != NULL) {
+        zmk_dongle_display_base_view_cycle();
     }
     return ZMK_BEHAVIOR_OPAQUE;
 }
