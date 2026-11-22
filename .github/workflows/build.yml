@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    uses: Sukumar002/zmk/.github/workflows/build-user-config.yml@7e05bf9846900e6eafd7b4665ac5240dcaca7b39
     with:
       build_matrix_path: build-hana.yaml
       archive_name: hana-firmware
